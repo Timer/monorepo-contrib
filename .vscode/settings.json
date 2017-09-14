@@ -1,0 +1,14 @@
+{
+  "editor.tabSize": 2,
+  "files.trimTrailingWhitespace": true,
+  "prettier.eslintIntegration": false,
+  "prettier.printWidth": 80,
+  "prettier.tabWidth": 2,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
+  "prettier.bracketSpacing": true,
+  "prettier.jsxBracketSameLine": false,
+  "prettier.parser": "babylon",
+  "prettier.semi": false,
+  "prettier.useTabs": false
+}
