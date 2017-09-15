@@ -8,6 +8,8 @@
     "yarn": "1.0.2"
   },
   "scripts": {
+    "start": "concurrently \"cd packages/github-promise/ && npx tsc --watch\" \"cd packages/monorepo-build/ && npx tsc --watch\" \"cd packages/monorepo-publish/ && npx tsc --watch\" \"cd packages/monorepo-repkg/ && npx tsc --watch\"",
+    "format": "prettier --no-semi --single-quote --trailing-comma es5 --write packages/*/{src,fixtures}/**/*.{js,ts}",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -34,7 +36,9 @@
   ],
   "devDependencies": {
     "@types/jest": "^20.0.8",
+    "concurrently": "^3.5.0",
     "jest": "^21.1.0",
+    "prettier": "^1.7.0",
     "ts-jest": "^21.0.1"
   },
   "jest": {

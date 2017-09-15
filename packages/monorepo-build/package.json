@@ -1,7 +1,7 @@
 {
-  "name": "monorepo-publish",
+  "name": "monorepo-build",
   "version": "0.0.0",
-  "description": "Publishes a monorepo.",
+  "description": "Builds a monorepo.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
@@ -13,7 +13,7 @@
   },
   "keywords": [
     "monorepo",
-    "publish",
+    "build",
     "lerna",
     "custom",
     "alias",
@@ -28,14 +28,14 @@
   "dependencies": {
     "debug": "^3.0.1",
     "fs-extra": "^4.0.2",
-    "monorepo-build": "0.0.0",
-    "tmp": "^0.0.33"
+    "monorepo-repkg": "0.0.0"
   },
   "devDependencies": {
     "@types/debug": "^0.0.30",
     "@types/fs-extra": "^4.0.2",
     "@types/node": "^8.0.28",
     "@types/tmp": "^0.0.33",
+    "tmp": "^0.0.33",
     "tslint": "^5.7.0",
     "typescript": "^2.5.2"
   }

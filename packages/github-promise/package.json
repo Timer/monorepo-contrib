@@ -1,0 +1,33 @@
+{
+  "name": "github-promise",
+  "version": "0.0.0",
+  "description": "A package providing promise wrapped methods of the `github` package.",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Timer/monorepo-contrib.git"
+  },
+  "keywords": [
+    "github",
+    "promise",
+    "async",
+    "await"
+  ],
+  "author": "Joe Haddad <timer150@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Timer/monorepo-contrib/issues"
+  },
+  "homepage": "https://github.com/Timer/monorepo-contrib#readme",
+  "dependencies": {
+    "github": "^11.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^8.0.28",
+    "typescript": "^2.5.2"
+  }
+}
