@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "description": "Repackages a monorepo on disk.",
   "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -28,6 +29,7 @@
     "@types/prettier": "^1.6.1",
     "babel-traverse": "^6.26.0",
     "babylon": "^6.18.0",
+    "debug": "^3.0.1",
     "globby": "^6.1.0",
     "prettier": "^1.7.0"
   },
@@ -44,18 +46,5 @@
     "tmp": "^0.0.33",
     "tslint": "^5.7.0",
     "typescript": "^2.5.2"
-  },
-  "jest": {
-    "transform": {
-      "^.+\\.tsx?$": "<rootDir>/../../node_modules/ts-jest/preprocessor.js"
-    },
-    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx",
-      "json"
-    ]
   }
 }

@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`publish should publish a project 1`] = `
+Array [
+  Object {
+    "command": "git clone https://github.com/facebookincubator/create-react-app.git .",
+  },
+  Object {
+    "command": "git config user.name \\"monorepo-publish\\"",
+  },
+  Object {
+    "command": "git config user.email \\"monorepo-publish@hostname.local\\"",
+  },
+  Object {
+    "command": "git reset --hard HEAD",
+  },
+  Object {
+    "command": "git add -A",
+  },
+  Object {
+    "command": "git commit -m \\"chore: alias packages\\"",
+  },
+  Object {
+    "command": "./node_modules/.bin/lerna publish --independent --exact --force-publish=* --cd-version=prepatch --preid=HEAD --yes --skip-git --npm-tag=contrib",
+  },
+]
+`;

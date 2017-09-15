@@ -39,7 +39,7 @@
   },
   "jest": {
     "collectCoverageFrom": [
-      "src/**/*.ts"
+      "packages/*/src/**/*.ts"
     ],
     "testMatch": [
       "<rootDir>/packages/*/src/**/__tests__/**/*.ts",
@@ -49,7 +49,8 @@
       "\\.ts$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
     "moduleFileExtensions": [
-      "ts"
+      "ts",
+      "js"
     ]
   }
 }

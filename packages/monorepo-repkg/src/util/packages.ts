@@ -93,7 +93,6 @@ export const rewriteRequires = (packages: PackageRename[]) => {
 
           if (
             rewriteRequireNode(path.node as CallExpression, packages, {
-              verbose: true,
               fileName: file,
             })
           ) {

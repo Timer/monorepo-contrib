@@ -11,6 +11,9 @@ import { NodePath } from 'babel-traverse'
 import { PackageRename } from './packages'
 import generator from 'babel-generator'
 import * as prettier from 'prettier'
+import * as Debug from 'debug'
+
+const debug = Debug('monorepo-repkg')
 
 export function getAst(filePath: string) {
   const code = readFileSync(filePath, 'utf8')
@@ -49,7 +52,7 @@ export function isRequire(path: NodePath<Node>) {
 export function rewriteRequireNode(
   node: CallExpression,
   packageAliases: PackageRename[],
-  { verbose = false, fileName = '...' } = {}
+  { fileName = '...' } = {}
 ) {
   const { arguments: args } = node
   const arg: any = args[0]
@@ -66,9 +69,7 @@ export function rewriteRequireNode(
         }
         changed = true
 
-        if (verbose) {
-          console.log(`${fileName}: ${orig} -> ${arg.value}`)
-        }
+        debug(`${fileName}: ${orig} -> ${arg.value}`)
       }
     }
 
