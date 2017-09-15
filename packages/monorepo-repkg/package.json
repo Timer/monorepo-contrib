@@ -1,0 +1,61 @@
+{
+  "name": "monorepo-repkg",
+  "version": "0.0.0",
+  "description": "Repackages a monorepo on disk.",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Timer/monorepo-contrib.git"
+  },
+  "keywords": [
+    "monorepo",
+    "repkg",
+    "repackage",
+    "rename",
+    "rewrite",
+    "change"
+  ],
+  "author": "Joe Haddad <timer150@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Timer/monorepo-contrib/issues"
+  },
+  "homepage": "https://github.com/Timer/monorepo-contrib#readme",
+  "dependencies": {
+    "@types/prettier": "^1.6.1",
+    "babel-traverse": "^6.26.0",
+    "babylon": "^6.18.0",
+    "globby": "^6.1.0",
+    "prettier": "^1.7.0"
+  },
+  "devDependencies": {
+    "@types/babel-generator": "^6.25.0",
+    "@types/babel-traverse": "^6.25.2",
+    "@types/babylon": "^6.16.2",
+    "@types/fs-extra": "^4.0.2",
+    "@types/globby": "^6.1.0",
+    "@types/node": "^8.0.28",
+    "@types/tmp": "^0.0.33",
+    "babel-generator": "^6.26.0",
+    "fs-extra": "^4.0.2",
+    "tmp": "^0.0.33",
+    "tslint": "^5.7.0",
+    "typescript": "^2.5.2"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "<rootDir>/../../node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json"
+    ]
+  }
+}

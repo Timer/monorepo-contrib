@@ -29,5 +29,27 @@
     "url": "https://github.com/Timer/monorepo-contrib/issues"
   },
   "homepage": "https://github.com/Timer/monorepo-contrib#readme",
-  "workspaces": ["packages/*"]
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@types/jest": "^20.0.8",
+    "jest": "^21.1.0",
+    "ts-jest": "^21.0.1"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.ts"
+    ],
+    "testMatch": [
+      "<rootDir>/packages/*/src/**/__tests__/**/*.ts",
+      "<rootDir>/packages/*/src/**/?(*.)(spec|test).ts"
+    ],
+    "transform": {
+      "\\.ts$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "moduleFileExtensions": [
+      "ts"
+    ]
+  }
 }

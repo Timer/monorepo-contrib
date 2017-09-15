@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`repkg should purely repackage a repo 1`] = `
+Array [
+  "require('package-2')
+",
+  "{
+  \\"name\\": \\"package-1\\",
+  \\"version\\": \\"1.0.0\\"
+}
+",
+  "{
+  \\"name\\": \\"package-2\\",
+  \\"version\\": \\"1.0.0\\"
+}
+",
+]
+`;
+
+exports[`repkg should purely repackage a repo 2`] = `
+Array [
+  "require('package-2')
+",
+  "{
+  \\"name\\": \\"package-1\\",
+  \\"version\\": \\"1.0.0\\"
+}
+",
+  "{
+  \\"name\\": \\"package-2\\",
+  \\"version\\": \\"1.0.0\\"
+}
+",
+]
+`;
+
+exports[`repkg should purely repackage a repo 3`] = `
+Array [
+  "require('package-2-dangerous');
+",
+  "{
+  \\"name\\": \\"package-1-dangerous\\",
+  \\"version\\": \\"1.0.0\\"
+}
+",
+  "{
+  \\"name\\": \\"package-2-dangerous\\",
+  \\"version\\": \\"1.0.0\\"
+}
+",
+]
+`;
