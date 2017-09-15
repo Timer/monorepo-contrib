@@ -1,12 +1,16 @@
 {
   "name": "github-promise",
-  "version": "0.0.0",
+  "version": "0.1.1",
   "description": "A package providing promise wrapped methods of the `github` package.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublish": "rimraf lib/ && tsc"
   },
+  "files": [
+    "lib/"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Timer/monorepo-contrib.git"
@@ -28,6 +32,7 @@
   },
   "devDependencies": {
     "@types/node": "^8.0.28",
+    "rimraf": "^2.6.2",
     "typescript": "^2.5.2"
   }
 }

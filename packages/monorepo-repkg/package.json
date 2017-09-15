@@ -1,12 +1,16 @@
 {
   "name": "monorepo-repkg",
-  "version": "0.0.0",
+  "version": "0.1.2",
   "description": "Repackages a monorepo on disk.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublish": "rimraf lib/ && tsc"
   },
+  "files": [
+    "lib/"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Timer/monorepo-contrib.git"
@@ -27,7 +31,9 @@
   "homepage": "https://github.com/Timer/monorepo-contrib#readme",
   "dependencies": {
     "@types/prettier": "^1.6.1",
+    "babel-generator": "^6.26.0",
     "babel-traverse": "^6.26.0",
+    "babel-types": "^6.26.0",
     "babylon": "^6.18.0",
     "debug": "^3.0.1",
     "globby": "^6.1.0",
@@ -43,6 +49,7 @@
     "@types/tmp": "^0.0.33",
     "babel-generator": "^6.26.0",
     "fs-extra": "^4.0.2",
+    "rimraf": "^2.6.2",
     "tmp": "^0.0.33",
     "tslint": "^5.7.0",
     "typescript": "^2.5.2"
