@@ -21,4 +21,8 @@ export function repkg(
   renamePackages(packages)
   rewriteRequires(packages)
   repackagePackages(directory, packages)
+
+  return getPackages(directory).filter(
+    ({ name }) => exclude.indexOf(name) === -1
+  )
 }

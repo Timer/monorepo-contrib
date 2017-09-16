@@ -34,10 +34,10 @@ export function build(
   debug(`(ok)`)
 
   debug(`getting packages ...`)
-  const packages = getPackages(pkgs)
-  debug(`-> packages: ${packages.map(({ name }) => name).join(', ')}`)
+  const _packages = getPackages(pkgs)
+  debug(`-> packages: ${_packages.map(({ name }) => name).join(', ')}`)
 
-  packages
+  _packages
     .filter(({ name }) => exclude.includes(name))
     .forEach(({ name, directory }) => {
       debug(`\t removing ${name} ...`)
@@ -62,5 +62,5 @@ export function build(
   execSync(directory, 'git commit -m "chore: alias packages"')
   debug('(ok)')
 
-  return packages
+  return getPackages(pkgs)
 }
