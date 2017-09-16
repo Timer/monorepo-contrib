@@ -1,6 +1,6 @@
 {
   "name": "github-promise",
-  "version": "0.1.1",
+  "version": "0.1.4",
   "description": "A package providing promise wrapped methods of the `github` package.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
