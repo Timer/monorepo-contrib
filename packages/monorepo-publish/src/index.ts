@@ -23,6 +23,8 @@ export function publish(
     prePublish = function(cwd: string) {},
     postPublish = function(cwd: string) {},
     npmToken = null as string | null,
+
+    lernaPath = './node_modules/.bin/lerna',
   } = {}
 ) {
   const { name: cwd } = tmp.dirSync()
@@ -51,7 +53,7 @@ export function publish(
   debug('publishing ...')
   execSync(
     cwd,
-    `./node_modules/.bin/lerna publish --independent --exact --force-publish=* --cd-version=prepatch --preid=${sha.slice(
+    `${lernaPath} publish --independent --exact --force-publish=* --cd-version=prepatch --preid=${sha.slice(
       0,
       7
     )} --yes --skip-git --npm-tag=${tagname}`
