@@ -45,7 +45,7 @@ export function publish(
     for (const { name, directory } of packages) {
       debug(`creating .npmrc for ${name} ...`)
       fs.writeFileSync(
-        path.resolve(directory, '.npmrc'),
+        path.join(directory, '.npmrc'),
         `//registry.npmjs.org/:_authToken=${npmToken}`
       )
     }
