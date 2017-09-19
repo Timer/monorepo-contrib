@@ -6,6 +6,7 @@ import {
   Statement,
   CallExpression,
   MemberExpression,
+  Expression,
 } from 'babel-types'
 import { NodePath } from 'babel-traverse'
 import { PackageRename } from './packages'
@@ -52,10 +53,10 @@ export function isRequire(path: NodePath<Node>) {
 export function rewriteRequireNode(
   node: CallExpression,
   packageAliases: PackageRename[],
-  { fileName = '...' } = {}
+  { fileName = '...', isSafe = (arg: Expression) => true } = {}
 ) {
   const { arguments: args } = node
-  const arg: any = args[0]
+  const arg = args[0] as Expression
 
   if (arg.type === 'StringLiteral') {
     const orig = arg.value
@@ -76,23 +77,9 @@ export function rewriteRequireNode(
     return changed
   }
 
-  // TODO: extract this to a passed in function
-  // This is a safe require, it's our paths module which does not change.
-  // There are other keys, too, I know are safe to ignore (e.g. json files).
-  if (
-    arg.name === 'packagePath' ||
-    arg.name === 'appPackageJson' ||
-    arg.name === 'templateDependenciesPath' ||
-    (arg.type === 'CallExpression' &&
-      arg.arguments[arg.arguments.length - 1] &&
-      arg.arguments[arg.arguments.length - 1].value === 'package.json') ||
-    (arg.object && arg.object.name === 'paths') ||
-    (arg.type === 'BinaryExpression' && arg.left.value.startsWith('..'))
-  ) {
-    return false
+  if (!isSafe(arg)) {
+    throw new Error('We found an unsafe require. Aborting.')
   }
-
-  throw new Error('Require must be a string literal.')
 }
 
 export function getCode(ast: File, originalCode: string) {
