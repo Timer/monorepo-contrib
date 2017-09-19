@@ -1,6 +1,6 @@
 {
   "name": "monorepo-build",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Builds a monorepo.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -32,7 +32,7 @@
   "dependencies": {
     "debug": "^3.0.1",
     "fs-extra": "^4.0.2",
-    "monorepo-repkg": "0.1.8"
+    "monorepo-repkg": "0.1.9"
   },
   "devDependencies": {
     "@types/debug": "^0.0.30",
